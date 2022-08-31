@@ -1,0 +1,10 @@
+[package]
+name = "ethers-contract-clonable-default"
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
+authors = ["Kevin Huetsch <kevin.huetsch@gmail.com>"]
+edition = "2018"
+description = "A utility trait to derive Default trait for contract abis"
+
+[dependencies]
+ethers-core ={ path="../../ethers-core" }

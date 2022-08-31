@@ -12,6 +12,7 @@ pub(crate) mod abi_ty;
 mod abigen;
 mod call;
 pub(crate) mod calllike;
+mod clonable_default;
 mod codec;
 mod display;
 mod error;
@@ -319,4 +320,12 @@ pub fn derive_abi_call(input: TokenStream) -> TokenStream {
 pub fn derive_abi_error(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     TokenStream::from(error::derive_eth_error_impl(input))
+}
+
+/// Derives the `Default` trait for the labeled type by the `ClonableDefault`,
+/// which supports long fixed array
+#[proc_macro_derive(DefaultFromClonable)]
+pub fn derive_clonable_default(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    TokenStream::from(clonable_default::derive_clonable_default(input))
 }

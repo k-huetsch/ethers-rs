@@ -258,7 +258,7 @@ impl Context {
         let ethers_contract = ethers_contract_crate();
 
         Ok(quote! {
-            #[derive(Clone, Debug, Default, Eq, PartialEq, #ethers_contract::EthEvent, #ethers_contract::EthDisplay, #derives)]
+            #[derive(Clone, Debug, Eq, PartialEq, #ethers_contract::DefaultFromClonable, #ethers_contract::EthEvent, #ethers_contract::EthDisplay, #derives)]
             #[ethevent( name = #event_abi_name, abi = #abi_signature )]
             pub #data_type_definition
         })

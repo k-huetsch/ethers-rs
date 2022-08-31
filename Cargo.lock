@@ -1243,6 +1243,7 @@ name = "ethers-contract"
 version = "0.17.0"
 dependencies = [
  "ethers-contract-abigen",
+ "ethers-contract-clonable-default",
  "ethers-contract-derive",
  "ethers-core",
  "ethers-derive-eip712",
@@ -1267,6 +1268,7 @@ dependencies = [
  "Inflector",
  "cfg-if 1.0.0",
  "dunce",
+ "ethers-contract-clonable-default",
  "ethers-core",
  "ethers-solc",
  "eyre",
@@ -1282,6 +1284,13 @@ dependencies = [
  "tempfile",
  "url",
  "walkdir",
+]
+
+[[package]]
+name = "ethers-contract-clonable-default"
+version = "0.1.0"
+dependencies = [
+ "ethers-core",
 ]
 
 [[package]]

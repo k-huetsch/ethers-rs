@@ -136,7 +136,7 @@ impl Context {
 
         Ok(quote! {
             #abi_signature_doc
-            #[derive(Clone, Debug, Default, Eq, PartialEq, #ethers_contract::EthCall, #ethers_contract::EthDisplay, #derives)]
+            #[derive(Clone, Debug, Eq, PartialEq, #ethers_contract::DefaultFromClonable, #ethers_contract::EthCall, #ethers_contract::EthDisplay, #derives)]
             #[ethcall( name = #function_name, abi = #abi_signature )]
             pub #call_type_definition
         })
@@ -177,7 +177,7 @@ impl Context {
 
         Ok(quote! {
             #abi_signature_doc
-            #[derive(Clone, Debug, Default, Eq, PartialEq, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
+            #[derive(Clone, Debug, Eq, PartialEq, #ethers_contract::DefaultFromClonable, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
             pub #return_type_definition
         })
     }

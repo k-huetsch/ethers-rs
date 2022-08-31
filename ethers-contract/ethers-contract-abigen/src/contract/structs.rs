@@ -140,7 +140,7 @@ impl Context {
         let ethers_contract = ethers_contract_crate();
         Ok(quote! {
             #abi_signature_doc
-            #[derive(Clone, Debug, Default, Eq, PartialEq, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
+            #[derive(Clone, Debug, Eq, PartialEq, #ethers_contract::DefaultFromClonable, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
             #struct_def
         })
     }
@@ -197,7 +197,7 @@ impl Context {
 
         Ok(quote! {
             #abi_signature_doc
-            #[derive(Clone, Debug, Default, Eq, PartialEq, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
+            #[derive(Clone, Debug, Eq, PartialEq, #ethers_contract::DefaultFromClonable, #ethers_contract::EthAbiType, #ethers_contract::EthAbiCodec, #derives)]
             pub struct #name {
                 #( #fields ),*
             }

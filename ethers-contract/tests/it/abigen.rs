@@ -682,6 +682,11 @@ fn can_generate_large_output_struct() {
 }
 
 #[test]
+fn can_generate_large_fixed_array() {
+    abigen!(LargeArrayStruct, "ethers-contract/tests/solidity-contracts/LargeFixedArray.json");
+}
+
+#[test]
 fn gen_complex_function() {
     abigen!(
         WyvernExchangeV1,

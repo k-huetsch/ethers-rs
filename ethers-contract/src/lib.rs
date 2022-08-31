@@ -25,6 +25,8 @@ pub use log::{decode_logs, EthLogDecode, LogMeta};
 
 pub mod stream;
 
+// mod tmp;
+
 #[cfg(any(test, feature = "abigen"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "abigen")))]
 mod multicall;
@@ -55,8 +57,12 @@ pub use ethers_contract_abigen::{
 #[cfg(any(test, feature = "abigen"))]
 #[cfg_attr(docsrs, doc(cfg(feature = "abigen")))]
 pub use ethers_contract_derive::{
-    abigen, EthAbiCodec, EthAbiType, EthCall, EthDisplay, EthError, EthEvent,
+    abigen, DefaultFromClonable, EthAbiCodec, EthAbiType, EthCall, EthDisplay, EthError, EthEvent,
 };
+
+#[cfg(any(test, feature = "abigen"))]
+#[cfg_attr(docsrs, doc(cfg(feature = "abigen")))]
+pub use ethers_contract_clonable_default::ClonableDefault;
 
 // Hide the Lazy re-export, it's just for convenience
 #[doc(hidden)]
